@@ -1,1 +1,0 @@
-2. Apresente um código HTML para o usuário dependendo da linguagem de sua prefência (inglês ou português)
