@@ -2,6 +2,8 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import dto.ClienteDTO;
 
@@ -25,7 +27,22 @@ public class ClienteDAO {
 	}
 	
 	public boolean save(ClienteDTO cliente) {
-		return false;
+		try (Connection conn = DriverManager.getConnection("jdbc:derby:memory:database;create=true")) { 
+			String sql = "INSERT INTO cliente (nome, telefone, idade, limiteCredito, id_pais) "
+					+ "VALUES (?, ?, ?, ?, ?)";
+			PreparedStatement st = conn.prepareStatement(sql);
+			st.setString(1, cliente.getNome());
+			st.setString(2, cliente.getTelefone());
+			st.setInt(3, cliente.getIdade());
+			st.setDouble(4, cliente.getLimiteCredito());
+			st.setInt(5, cliente.getPais().getId());
+			
+			int result = st.executeUpdate();
+			return result > 0 ? true : false;
+		} catch (SQLException ex) {
+		    ex.printStackTrace();
+		    return false;
+		}		
 	}
 	
 	public boolean delete(int id) {
