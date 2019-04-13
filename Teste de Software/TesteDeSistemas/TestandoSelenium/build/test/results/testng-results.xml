@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="TestandoSelenium" duration-ms="2575" started-at="2016-11-18T17:35:40Z" finished-at="2016-11-18T17:35:42Z">
+    <groups>
+    </groups>
+    <test name="selenium.ExerciciosTest" duration-ms="2575" started-at="2016-11-18T17:35:40Z" finished-at="2016-11-18T17:35:42Z">
+      <class name="selenium.ExerciciosTest">
+        <test-method status="PASS" signature="testEnviarComentario()[pri:0, instance:testEnviarComentario(selenium.ExerciciosTest)]" name="testEnviarComentario" duration-ms="2503" started-at="2016-11-18T15:35:40Z" finished-at="2016-11-18T15:35:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEnviarComentario -->
+      </class> <!-- selenium.ExerciciosTest -->
+    </test> <!-- selenium.ExerciciosTest -->
+  </suite> <!-- TestandoSelenium -->
+</testng-results>

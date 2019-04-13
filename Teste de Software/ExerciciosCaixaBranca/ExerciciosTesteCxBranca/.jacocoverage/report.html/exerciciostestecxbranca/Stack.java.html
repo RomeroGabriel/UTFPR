@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Stack.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;ExerciciosTesteCxBranca&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">exerciciostestecxbranca</a> &gt; <span class="el_source">Stack.java</span></div><h1>Stack.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package exerciciostestecxbranca;
+
+import java.util.EmptyStackException;
+
+/**
+ *
+ * @author Aluno
+ */
+<span class="fc" id="L14">public class Stack {</span>
+
+<span class="fc" id="L16">    int[] values = new int[3];</span>
+<span class="fc" id="L17">    int size = 0;</span>
+
+    public void push(int x) {
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (size &gt;= values.length) {</span>
+<span class="fc" id="L21">            resize();</span>
+        }
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">        if (size &lt; values.length) {</span>
+<span class="fc" id="L24">            values[size++] = x;</span>
+        }
+<span class="fc" id="L26">    }</span>
+
+    public int pop() {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (size &gt; 0) {</span>
+<span class="fc" id="L30">            return values[--size];</span>
+        } else {
+<span class="fc" id="L32">            throw new EmptyStackException();</span>
+        }
+    }
+
+    private void resize() {
+<span class="fc" id="L37">        int[] tmp = new int[values.length * 2];</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        for (int i = 0; i &lt; values.length; i++) {</span>
+<span class="fc" id="L39">            tmp[i] = values[i];</span>
+        }
+<span class="fc" id="L41">        values = tmp;</span>
+<span class="fc" id="L42">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
