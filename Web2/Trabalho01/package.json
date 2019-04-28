@@ -1,0 +1,11 @@
+{
+  "name": "trabalho01",
+  "version": "1.0.0",
+  "description": "Trabalho da disciplica Web 2, UTFPR 2019/01",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Romero de Souza",
+  "license": "ISC"
+}
