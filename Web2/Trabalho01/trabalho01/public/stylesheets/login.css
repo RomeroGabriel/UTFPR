@@ -1,0 +1,48 @@
+.container {
+    flex-flow: column wrap;
+    background-color: gray;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.box {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2em;
+}
+
+.box h3 {
+    align-self: center;
+    padding: 1em;
+}
+
+.form-group {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    padding-right: 7px;
+}
+
+.form button {
+    width: 100%;
+}
+
+.newUser {
+    align-self: flex-end;
+    margin-top: 1em;
+}
