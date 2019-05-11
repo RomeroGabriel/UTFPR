@@ -11,14 +11,14 @@
                 <div class="box">
                     <h3>Login to system</h3>
                     <div class="form">
-                        <form>
+                        <form action="/users/login" method="POST">
                             <div class="form-group">
                                 <label for="email">Email*</label>
                                 <input name="email" type="email" id="email" placeholder="Enter email">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password*</label>
-                                <input type="password" id="password" placeholder="Password">
+                                <input name="password" type="password" id="password" placeholder="Password">
                             </div>
                             <button type="submit">Sign in</button>
                         </form>

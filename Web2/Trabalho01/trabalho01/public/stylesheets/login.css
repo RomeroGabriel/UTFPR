@@ -46,3 +46,8 @@
     align-self: flex-end;
     margin-top: 1em;
 }
+
+.emailExist{
+    color: red;
+    margin-bottom: 1em;
+}
