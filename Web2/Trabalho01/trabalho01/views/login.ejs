@@ -20,6 +20,9 @@
                                 <label for="password">Password*</label>
                                 <input name="password" type="password" id="password" placeholder="Password">
                             </div>
+                            <% if(message.length > 0) {%>
+                                <h4 class="emailExist"><%= message%></h4>
+                            <%}%>
                             <button type="submit">Sign in</button>
                         </form>
                     </div>

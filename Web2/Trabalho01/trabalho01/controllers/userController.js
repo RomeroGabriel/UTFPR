@@ -11,7 +11,7 @@ module.exports = {
                 isDeleted: false
             });
             user.save().then(result => {
-                res.render('login');
+                res.render('login', {});
             }, err => {
                 if (err) { return res.status(500).json({ message: 'Erro ao cadastrar usuário', error: err }) };
             });
@@ -29,8 +29,7 @@ module.exports = {
             res.redirect('/');
             return;
         } else {
-            res.status(403);
-            res.end();
+            res.render('login', { message: 'Email ou senha errados!' });
         }
     },
 
