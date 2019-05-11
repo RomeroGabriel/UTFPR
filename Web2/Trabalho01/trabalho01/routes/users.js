@@ -7,12 +7,6 @@ router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/login', function (req, res, next) {
-  res.render('login', { message: '' });
-});
-
-router.post('/login', controller.login);
-
 router.get('/newUser', function (req, res, next) {
   res.render('newUser', { error: '' });
 });
