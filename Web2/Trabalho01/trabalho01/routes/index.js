@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
         res.render('paginaInicial', { user: req.cookies.login });
         return;
     }
-    res.redirect('/login', { message: '' });
+    res.redirect({ message: '' }, '/login');
 });
 
 router.get('/login', function (req, res, next) {

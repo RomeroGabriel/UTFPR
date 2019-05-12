@@ -1,0 +1,19 @@
+.container {
+    flex-flow: column wrap;
+    background-color: #FFD54F;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: #FFE0B2;
+}
+
+.form-group label {
+    padding-right: 7px;
+}
+
+.form button {
+    width: 100%;
+}

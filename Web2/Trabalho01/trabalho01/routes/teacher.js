@@ -6,4 +6,6 @@ router.get('/create', function (req, res, next) {
     res.render('newTeacher', { message: '' });
 });
 
-router.post('/create', controller.save);
+router.post('/createTeacher', controller.save);
+
+module.exports = router;
