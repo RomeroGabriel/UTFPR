@@ -4,11 +4,7 @@
 }
 
 .faixa {
-    display: flex;
-    flex-flow: row wrap;
     justify-content: flex-end;
-    align-items: center;
-    margin: 1em;
 }
 
 .content {

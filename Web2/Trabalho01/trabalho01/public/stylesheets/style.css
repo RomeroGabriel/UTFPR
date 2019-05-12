@@ -81,3 +81,10 @@ table {
   color: red;
   margin-bottom: 1em;
 }
+
+.faixa {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 1em;
+}
