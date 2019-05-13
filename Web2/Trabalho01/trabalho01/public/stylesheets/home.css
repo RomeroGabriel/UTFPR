@@ -21,3 +21,19 @@
     justify-content: space-around;
     border-radius: 11px;
 }
+
+.list {
+    margin-top: 2em;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.itens {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 1em 2em;
+    padding: 1em 0;
+}

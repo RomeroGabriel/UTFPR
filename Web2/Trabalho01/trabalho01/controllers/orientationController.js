@@ -9,7 +9,7 @@ module.exports = {
             teacher: req.body.teacher
         });
         orientation.save().then(result => {
-            return res.redirect('/orientation/get');
+            return res.redirect('/');
         }, err => {
             res.render('newOrientation', { list: [], message: 'Error in save new orientation!' });
         });
@@ -24,6 +24,19 @@ module.exports = {
     },
 
     getAll: function(req, res){
-        res.render('paginaInicial', {});
+        orientationModel.find().then(result => {
+            res.render('paginaInicial', { list: result, message: '' })
+        }, err => {
+            res.render('paginaInicial', { list: [], message: 'Error getting orientations' })
+        });
+    },
+
+    delete: function(req, res){
+        let id = req.params.id;
+        orientationModel.findByIdAndRemove(id).then(result => {
+            return res.redirect('/');
+        }, err => {
+            res.render('paginaInicial', { list: [], message: 'Error, can not delete orientation!' });
+        });
     }
 };

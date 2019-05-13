@@ -1,12 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var controller = require('../controllers/orientationController');
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('paginaInicial');
-    return;
-});
-
+router.get('/', controller.getAll);
 router.get('/logout', function (req, res, next) {
     res.clearCookie('login', { path: '/login' });
     return res.redirect('/users/login');

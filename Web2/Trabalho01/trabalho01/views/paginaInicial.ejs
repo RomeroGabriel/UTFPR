@@ -17,6 +17,24 @@
           <a href="/orientation">Create new orientation</a>
         </div>
       </div>
+      <div class="list">
+        <% if(message.length > 0) {%>
+          <h4 class="emailExist"><%= message%></h4>
+        <%}%>
+
+        <% if(!list || list.length == 0) {%>
+          <h4 style="align-self: center; margin-top: 2em;">There's no orientation register :(</h4>
+        <% } else { %>
+          <% for (i of list) { %>
+            <div class="itens">
+              <p>Thema: <%= i.thema %></p>
+              <p>Student Name: <%= i.studentName %></p>
+              <p>Teacher: Watanabe</p>
+              <a href="/orientation/delete/<%= i._id %>">Delete</a>
+            </div>
+          <% } %>
+        <% } %>
+      </div>
     </div>
   </body>
 </html>
