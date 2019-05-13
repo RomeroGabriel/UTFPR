@@ -10,7 +10,7 @@ module.exports = {
                 password: req.body.password
             });
             user.save().then(result => {
-                res.render('login', {});
+                return res.redirect('/users/login');
             }, err => {
                 if (err) { return res.status(500).json({ message: 'Error in register new user', error: err }) };
             });
@@ -25,8 +25,7 @@ module.exports = {
         let user = await userModel.find({ email: email, password: password });
         if (user.length > 0) {
             res.cookie('login', email);
-            res.redirect('/');
-            return;
+            return res.redirect('/');
         } else {
             res.render('login', { message: 'Email or password wrong!' });
         }

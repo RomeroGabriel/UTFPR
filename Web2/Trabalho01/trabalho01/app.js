@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var teachersRouter = require('./routes/teacher');
 var orientationRouter = require('./routes/orientation');
-
+var router = express.Router();
 var app = express();
 
 // view engine setup
@@ -21,8 +21,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+router.use(function (req, res, next) {
+  if (!req.cookies.login) {
+    return res.redirect('/login');
+  }
+  next();
+});
 app.use('/users', usersRouter);
+app.use(router);
+app.use('/', indexRouter);
 app.use('/teacher', teachersRouter);
 app.use('/orientation', orientationRouter);
 

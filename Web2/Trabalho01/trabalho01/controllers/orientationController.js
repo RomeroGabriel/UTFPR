@@ -9,7 +9,7 @@ module.exports = {
             teacher: req.body.teacher
         });
         orientation.save().then(result => {
-            return res.redirect('/');
+            return res.redirect('/orientation/get');
         }, err => {
             res.render('newOrientation', { list: [], message: 'Error in save new orientation!' });
         });
@@ -21,5 +21,9 @@ module.exports = {
         }, err => {
             res.render('newOrientation', { list: [], message: '' });
         });
+    },
+
+    getAll: function(req, res){
+        res.render('paginaInicial', {});
     }
 };
