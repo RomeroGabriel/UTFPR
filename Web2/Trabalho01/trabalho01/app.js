@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 router.use(function (req, res, next) {
   if (!req.cookies.login) {
-    return res.redirect('/login');
+    return res.redirect('/users/login');
   }
   next();
 });

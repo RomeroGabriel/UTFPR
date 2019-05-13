@@ -10,7 +10,7 @@ module.exports = {
                 department: req.body.department,
             });
             teacher.save().then(result => {
-                res.render('paginaInicial', {});
+                return res.redirect('/');
             }, err => {
                 if (err) { return res.status(500).json({ message: 'Error in register new teacher', error: err }) };
             });

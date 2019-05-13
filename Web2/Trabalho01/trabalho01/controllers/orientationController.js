@@ -23,15 +23,33 @@ module.exports = {
         });
     },
 
-    getAll: function(req, res){
-        orientationModel.find().then(result => {
+    getAll: function (req, res) {
+
+        orientationModel.aggregate([
+            {
+                $lookup:
+                {
+                    from: 'teachers',
+                    localField: 'teacher',
+                    foreignField: '_id',
+                    as: 'teacherName'
+                }
+            },
+            { $unwind: '$teacherName' },
+            { $project: { thema: 1, _id: 1, studentName: 1, teacherName: 1 } }
+        ]).then(result => {
             res.render('paginaInicial', { list: result, message: '' })
         }, err => {
             res.render('paginaInicial', { list: [], message: 'Error getting orientations' })
-        });
+        })
+        // orientationModel.find().then(result => {
+        //     res.render('paginaInicial', { list: result, message: '' })
+        // }, err => {
+        //     res.render('paginaInicial', { list: [], message: 'Error getting orientations' })
+        // });
     },
 
-    delete: function(req, res){
+    delete: function (req, res) {
         let id = req.params.id;
         orientationModel.findByIdAndRemove(id).then(result => {
             return res.redirect('/');
